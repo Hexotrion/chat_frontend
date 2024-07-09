@@ -9,7 +9,7 @@ import closeIcon from "../../images/closeIcon.png";
 
 let socket;
 
-const ENDPOINT = "https://chat-backend-hexotrion.vercel.app/";
+const ENDPOINT = "https://chat-backend-hlen.onrender.com/";
 
 const Chat = () => {
     const [id, setId] = useState("");
@@ -23,8 +23,9 @@ const Chat = () => {
 
     console.log(messages);
     useEffect(() => {
+        alert('Connecting1');
         socket = socketIo(ENDPOINT, { transports: ['websocket'] });
-
+        alert('Connected1');
         socket.on('connect', () => {
             alert('Connected');
             setId(socket.id);
